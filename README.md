@@ -4,6 +4,12 @@
 
 **E-mail : vamsiramg@gmail.com**
 
+As task 2 is split into three parts, I have uploaded the links acccordingly.
+In the first part I uploaded the summary of my learnings from chapter 1 to chapter 5.
+In the second part I have added the summary of Chapter 6 to 8 along with the above.
+In the third part I added the summary of remaining chapters.
+So It is my request to inspect the three links uploaded in the assignments because it is split into parts where the third link would contain the summary of the learnings of all the chapters
+
 # Web Development using Flask
 
 ## What is Flask?
@@ -199,4 +205,89 @@ There needs to be application's help in loading a user. For that reason, the ext
     *return User.query.get(int(id))
 ~~~
 An example of login form is explained integrating all the above mentioned methods.
+
+*This part includes the rest of the summary*
+### Chapter – 9:
+
+### User Roles
+
+In case of a **simple application** we may need just **two roles** namely, one for **regular users** and one for **administrators**. In this case, having an is_administrator Boolean field in the User model may be all that is necessary.
+Whereas in case of a more complex application may need additional roles with varying levels of power in between regular users and administrators.
+Several application permisiion commands can be stated and defined inside a Permisiion class.
+
+There can be four main user roles:
+- None
+- User
+- Moderator
+- Administrator
+
+Once these roles are created then they are assigned and verified with the users.
+
+### Chapter – 10:
+
+### User Profiles
+
+- Some additional information of the users can be stored in the database.
+- An intreactive **User Profile Page** can be created wherein the user information can be gathered and displayed.
+- We can also provide **Profile Edit** option for the users.
+- We can add add user images and avatars, but instead of uploading images in the server,we can use the Gravatar service to provide images for all users.
+- We can also make use of Jinja2 Sub-Templates to make more interactive user profile pages.
+
+*Chapter 11 to Chapter 13 mainly focussed on developing a blog and discussing ways to improve the appearance and enabling different features such as likes,comments and displaying the previous blogs in the main informtion page.Creating a blog involved incorporating various packages like rendering templates and databases.*
+
+### Chapter – 14:
+
+### Application Program Interfaces
+
+Flask is an ideal framework to build RESTful Application Program Interfaces.The six defining features of this REST architecture are:
+- Client Server
+- Stateless
+- Cache
+- Uniform Interface
+- Layered System
+- Code on demand
+
+There are several Request methods such as **GET**, **POST**, **PUT** and **DELETE**.
+
+We can create an API Blueprint because the routes associated with a RESTful API form a self-contained subset of the application, so putting them in their own blueprint is the best way to keep them well organized.
+
+We can use the Flask HTTPAuth to perform user authentication.There are different ways to authenticate the user,Token Based or Serializing Resoures to and from JSON.
+
+
+### Chapter – 15:
+
+### Testing
+
+- We can test the developed web application with the help of Unit Tests.
+- These are used to confirm whether the code is working in the expected way or not and these unit tests also emsure that there is no regressions.
+- We can obtain the **Code Coverage reports** with the help of Python **coverage package**.
+- Flask comes equipped with a test client.This test client replicates the environment that exists when an application is running inside a web server, allowing tests to act as clients and send requests.
+- End to end testing can be done by using **selenium**.
+
+### Chapter – 16:
+
+### Performance
+
+The **get_debug_queries()** function returns the queries issued during the request as a list.The commands include
+- statement  --> The SQL statement
+- parameters --> The parameters used in the SQL statement.
+- start_time --> time the query was issued.
+- end_time   --> time query was returned.
+- duration   --> duration of the query in seconds.
+- context    --> string that indicates the source code location.
+
+### Chapter – 17:
+
+### Deployment
+
+Several methods to deploy the web application are explained which include 
+- Cloud Deployment - through EC2 service by AWS.
+- Containers - Platform as a Service using Docker
+
+The entire process to deploy the web application using Heroku Platform is explained clearly which inclues preparing the application to testing.
+
+### Conclusion:
+
+In this summary,I have briefly explained the concepts of using Flask in python for developing a Web Application from scratch to deploying it for use.
+I am greatly obliged and thank Wow Labz for providing me the valuable learning resources in order to kickstart my internship.I also take this oppurtunity to thank Conduira online for providing me a platform in order to learn and develop my skills.
 
