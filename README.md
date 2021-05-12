@@ -13,7 +13,7 @@ Flask is a python web frame work which provides us with tools and libraries to b
 - Debugging
 - Web Server Gateway Interface (WSGI)
 
-This part includes from Chapter 1 to Chapter 5.
+*This part includes from Chapter 1 to Chapter 5.*
 
 ### Chapter – 1:
 
@@ -121,4 +121,82 @@ The db object instantiated from the class SQLAlchemy represents the database and
 Model definition can be given inside a class and defining functions inside the class with proper return commands.
 With the help of db commands,we can **create ,modify,delete and query** different rows among the tables.
 
+
+*This part includes from Chapter 6 to Chapter 8.*
+
+### Chapter – 6:
+
+### Email
+
+In order to integrate Email with web application, we can make use of the **flask-mail pckage**.
+This extension connects it to a SMTP, Simple Mail Transfer Protocol and passes the email to it for delivery.
+~~~
+*app.config['MAIL_SERVER']* = 'enter_the_mail_server'
+
+*app.config['MAIL_PORT']* = (enter the port)
+
+*app.config['MAIL_USE_TLS']* = True
+
+*app.config['MAIL_USERNAME']* = os.environ.get('MAIL_USERNAME')
+
+*app.config['MAIL_PASSWORD']* = os.environ.get('MAIL_PASSWORD')
+~~~
+We can send mails from the python shell by importing the **Message method** from the **flask_mail package**.
+Then we can integrate the Emails with the web applicartion using app.config() and defining a function.
+
+
+### Chapter – 7:
+
+### Large Application Structure
+
+In this book they proposed a structure in order to efficiently handle the development of Web Applications for large scale structures.
+
+This method include four top-level folders:
+
+- The Flask application which is inside a package generically named app.
+- The migrations folder that contains the database migration scripts.
+- Unit tests which are written in a tests package.
+- The venv folder that contains the Python virtual environment.
+
+Also there need to be some files for configuration which are:
+
+- **requirements.txt** which lists the package dependencies so that it is easy to regenerate an identical virtual environment on a different computer.
+- **config.py** that stores the configuration settings.
+- **flasky.py** that defines the Flask application instance, and also includes a few tasks that help manage the application.
+
+### Chapter – 8:
+
+### User Authentication
+
+This can be done wit the help of Flask extension called **Flask-Login**. 
+
+This extension manages the user logged-in state, so that for example users can log in to the application and then navigate to different pages while the application "remembers" that the user is logged in. It also provides the "remember me" functionality that allows users to remain logged in even after closing the browser window.
+~~~
+*from flask_login import LoginManager
+
+*app = Flask(__name__)
+.....
+*login = LoginManager(app)
+~~~
+The Flask-Login extension works with the application's user model,and certain properties and methods could be implemented in it.
+
+There are four required items which are:
+
+- **is_authenticated**
+- **is_active**
+- **is_anonymous**
+- **get_id()**
+
+Flask-Login keeps track of the logged in user by storing its unique identifier in Flask's user session, a storage space assigned to each user who connects to the application.
+There needs to be application's help in loading a user. For that reason, the extension expects that the application will configure a user loader function which looks like,
+~~~
+*from app import login
+
+*@login.user_loader
+
+*def load_user(id):
+
+    *return User.query.get(int(id))
+~~~
+An example of login form is explained integrating all the above mentioned methods.
 
