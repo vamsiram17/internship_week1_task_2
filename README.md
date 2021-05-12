@@ -14,40 +14,47 @@ Flask is a python web frame work which provides us with tools and libraries to b
 ### Chapter – 1:
 
 Initially we begin by *setting up a virtual environment* in our python compiler.
+~~~
 **pip install virtualenv**
-
+~~~
 Then we need to create a sub folder in our main folder such as
+~~~
 **python -m venv virtual_environment_name**
- 
+~~~ 
 Then we need to *install the Flask* by using Python Install Package command,
+~~~
 **pip install flask**
-
+~~~
 We can **check all the packages** that are installed in our virtual environment by using the command, 
+~~~
 **pip freeze**
-
+~~~
 We need to activate the virtual environment in order to build our app using flask.
 We can activate the virtual environment by using the command,
+~~~
 **virtual_environment_name\Scripts\activate**
+~~~
 
 ### Chapter – 2:
 
 ### Basic Application Structure:
 
 Initially we must create an application instance. Then the webserver passes all the requests to this object using WSGI protocol. This application instance can be created as,
+~~~
 from flask import Flask
 app = Flask(__name__)
-
+~~~
 The flask application keeps mapping the URL requests to the Python functions. This association between a URL and function is called as route.
 
 A complete application script would look like this.
-
+~~~
 *from flask import Flask
 app = Flask(__name__)
 
 *@app.route('/')
 def index():
     print('The Apex Predator RANDY ORTON')
-
+~~~
 ### Development Web Server:
 
 The flask application includes a development web server that run with flask run command.
@@ -117,7 +124,7 @@ With the help of db commands,we can **create ,modify,delete and query** differen
 
 In order to integrate Email with web application, we can make use of the **flask-mail pckage**.
 This extension connects it to a SMTP, Simple Mail Transfer Protocol and passes the email to it for delivery.
-
+~~~
 *app.config['MAIL_SERVER']* = 'enter_the_mail_server'
 
 *app.config['MAIL_PORT']* = (enter the port)
@@ -127,7 +134,7 @@ This extension connects it to a SMTP, Simple Mail Transfer Protocol and passes t
 *app.config['MAIL_USERNAME']* = os.environ.get('MAIL_USERNAME')
 
 *app.config['MAIL_PASSWORD']* = os.environ.get('MAIL_PASSWORD')
-
+~~~
 We can send mails from the python shell by importing the **Message method** from the **flask_mail package**.
 Then we can integrate the Emails with the web applicartion using app.config() and defining a function.
 
@@ -158,13 +165,13 @@ Also there need to be some files for configuration which are:
 This can be done wit the help of Flask extension called **Flask-Login**. 
 
 This extension manages the user logged-in state, so that for example users can log in to the application and then navigate to different pages while the application "remembers" that the user is logged in. It also provides the "remember me" functionality that allows users to remain logged in even after closing the browser window.
-
+~~~
 *from flask_login import LoginManager
 
 *app = Flask(__name__)
 .....
 *login = LoginManager(app)
-
+~~~
 The Flask-Login extension works with the application's user model,and certain properties and methods could be implemented in it.
 
 There are four required items which are:
@@ -176,7 +183,7 @@ There are four required items which are:
 
 Flask-Login keeps track of the logged in user by storing its unique identifier in Flask's user session, a storage space assigned to each user who connects to the application.
 There needs to be application's help in loading a user. For that reason, the extension expects that the application will configure a user loader function which looks like,
-
+~~~
 *from app import login
 
 *@login.user_loader
@@ -184,7 +191,7 @@ There needs to be application's help in loading a user. For that reason, the ext
 *def load_user(id):
 
     *return User.query.get(int(id))
-
+~~~
 An example of login form is explained integrating all the above mentioned methods.
 
 ### Chapter – 9:
@@ -213,9 +220,24 @@ Once these roles are created then they are assigned and verified with the users.
 - We can add add user images and avatars, but instead of uploading images in the server,we can use the Gravatar service to provide images for all users.
 - We can also make use of Jinja2 Sub-Templates to make more interactive user profile pages.
 
-### Chapter – 11
+*Chapter 11 to Chapter 13 mainly focussed on developing a blog and discussing ways to improve the appearance and enabling different features such as likes,comments and displaying the previous blogs in the main informtion page.Creating a blog involved incorporating various packages like rendering templates and databases.*
 
-### Blog posts
+### Chapter – 14:
+
+### Application Program Interfaces
+
+Flask is an ideal framework to build RESTful Application Program Interfaces.The six defining features of this REST architecture are:
+- Client Server
+- Stateless
+- Cache
+- Uniform Interface
+- Layered System
+- Code on demand
+
+There are several Request methods such as **GET**, **POST**, **PUT** and **DELETE**.
+
+We can create an API Blueprint because the routes associated with a RESTful API form a self-contained subset of the application, so putting them in their own blueprint is the best way to keep them well organized.
+
 
 
 
