@@ -238,6 +238,38 @@ There are several Request methods such as **GET**, **POST**, **PUT** and **DELET
 
 We can create an API Blueprint because the routes associated with a RESTful API form a self-contained subset of the application, so putting them in their own blueprint is the best way to keep them well organized.
 
+We can use the Flask HTTPAuth to perform user authentication.There are different ways to authenticate the user,Token Based or Serializing Resoures to and from JSON.
 
 
+### Chapter – 15:
+
+### Testing
+
+- We can test the developed web application with the help of Unit Tests.
+- These are used to confirm whether the code is working in the expected way or not and these unit tests also emsure that there is no regressions.
+- We can obtain the **Code Coverage reports** with the help of Python **coverage package**.
+- Flask comes equipped with a test client.This test client replicates the environment that exists when an application is running inside a web server, allowing tests to act as clients and send requests.
+- End to end testing can be done by using **selenium**.
+
+### Chapter – 16:
+
+### Performance
+
+The **get_debug_queries()** function returns the queries issued during the request as a list.The commands include
+- statement  --> The SQL statement
+- parameters --> The parameters used in the SQL statement.
+- start_time --> time the query was issued.
+- end_time   --> time query was returned.
+- duration   --> duration of the query in seconds.
+- context    --> string that indicates the source code location.
+
+### Chapter – 17:
+
+### Deployment
+
+Several methods to deploy the web application are explained which include 
+- Cloud Deployment - through EC2 service by AWS.
+- Containers - Platform as a Service using Docker
+
+The entire process to deploy the web application using Heroku Platform is explained clearly which inclues preparing the application to testing.
 
